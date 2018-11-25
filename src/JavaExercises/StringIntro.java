@@ -1,4 +1,4 @@
-package com.lolasoftware;
+package JavaExercises;
 
 public class StringIntro {
 
