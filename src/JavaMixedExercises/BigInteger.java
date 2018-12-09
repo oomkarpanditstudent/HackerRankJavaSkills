@@ -6,9 +6,8 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-class Solution {
 
-
+class Solution1 {
 
     private static final Scanner scanner = new Scanner(System.in);
 
