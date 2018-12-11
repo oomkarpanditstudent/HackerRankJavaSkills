@@ -1,39 +1,39 @@
-import java.util.*;
-interface AdvancedArithmetic{
-    int divisor_sum(int n);
-}
-class MyCalculator implements AdvancedArithmetic{
-    int total=0;
-    public int divisor_sum(int in){
-        for (int i=1;i<=in;i++){
-            if (in%i==0)
-                total+=i;
-        }
-        return total;
-    }
+package JavaArrays;
 
-}
-//Write your code here
-
-class Solution{
-    public static void main(String []args){
-        MyCalculator my_calculator = new MyCalculator();
-        System.out.print("I implemented: ");
-        ImplementedInterfaceNames(my_calculator);
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.print(my_calculator.divisor_sum(n) + "\n");
-        sc.close();
-    }
+import java.util.Scanner;
+class MyCalculator {
     /*
-     *  ImplementedInterfaceNames method takes an object and prints the name of the interfaces it implemented
+     * Create the method long power(int, int) here.
      */
-    static void ImplementedInterfaceNames(Object o){
-        Class[] theInterfaces = o.getClass().getInterfaces();
-        for (int i = 0; i < theInterfaces.length; i++){
-            String interfaceName = theInterfaces[i].getName();
-            System.out.println(interfaceName);
+    long power(int x, int y) throws Exception{
+
+        if (x==0||y==0 ){
+            throw new Exception("n and p should not be zero.");
+        }
+        if (x<0||y<0 ){
+            throw new Exception("n or p should not be negative.");
+        }
+
+        long result = (long) Math.pow(x,y);
+            return result;
+    }
+
+}
+
+public class Solution {
+    public static final MyCalculator my_calculator = new MyCalculator();
+    public static final Scanner in = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        while (in .hasNextInt()) {
+            int n = in .nextInt();
+            int p = in .nextInt();
+
+            try {
+                System.out.println(my_calculator.power(n, p));
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
     }
 }
-
